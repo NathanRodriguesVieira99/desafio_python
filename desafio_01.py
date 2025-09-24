@@ -11,25 +11,25 @@ class N:
 
         N.typed_numbers.add(typed_number)
 
-        soma = sum(int(digito)**2 for digito in str(typed_number))
+        sum_function = sum(int(digito)**2 for digito in str(typed_number))
 
 # se o(s) números for(em) feliz(es) retorna True
-        if soma == 1:
+        if sum_function == 1:
             N.typed_numbers.clear()
             return True
 
-        return self.is_happy(soma)
+        return self.is_happy(sum_function)
 
 
 n = N()
 
 # informa o(s) número(s)
-entrada = input("Digite um  número: ")
+input_value = input("Digite um  número: ")
 
 
 # pega o(s) número(s) e valida se o cálculo está correto (feliz ou infeliz)
 
-for valor in entrada.split():
+for valor in input_value.split():
     try:
         typed_number = int(valor)
         if n.is_happy(typed_number):
